@@ -35,7 +35,7 @@ const AdminNavbar = () => {
           <Link className="navbar-logo-link" to="/">
             <img src="../assets/images/logo.png" alt="Logo" className="navbar-logo" />
             <span className="brand-name">
-              <span className="brand-highlight">Too</span> Ease
+              <span className="brand-highlight">Chakra</span> 
             </span>
           </Link>
           <div className="navbar-links-left">
