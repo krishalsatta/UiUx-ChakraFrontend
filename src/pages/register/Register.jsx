@@ -164,9 +164,9 @@ const Register = () => {
             <p>Already have an account? <span onClick={handleLoginRedirect} className="login-link">Login</span></p>
           </div>
         </div>
-        <div className="register-image">
-          <img src="../assets/images/ecom.png" alt="Register" />
-        </div>
+        {/* <div className="register-image">
+          <img src="../assets/images/login.jpg" alt="Register" />
+        </div> */}
       </div>
     </>
   );
