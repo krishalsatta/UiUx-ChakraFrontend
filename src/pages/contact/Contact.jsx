@@ -33,7 +33,7 @@ const Contact = () => {
     <div className="contact-container">
       <div className="contact-content">
         <div className="contact-logo">
-          <img src="../assets/images/logo.png" alt="Too Ease Logo" />
+          <img src="../assets/images/logo.png" alt="Chakra Logo" />
         </div>
         <h1>Contact Us</h1>
         <p>If you have any questions, feel free to reach out to us. We're here to help!</p>
