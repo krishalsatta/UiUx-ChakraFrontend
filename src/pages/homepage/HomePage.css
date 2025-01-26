@@ -1,4 +1,3 @@
-/* General Styles */
 body {
   font-family: 'Roboto', sans-serif;
   color: #ffffff;
@@ -10,16 +9,15 @@ body {
 .home-container {
   text-align: center;
   background-color: #1a1a1a;
-  color: #ffffff; /* Set default text color for the entire home container */
+  color: #ffffff; 
 }
 
-/* Hero Section */
 .hero-section {
   position: relative;
   text-align: center;
   color: white;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(2, 55, 148, 0.7)),
-    url('https://www.bostik.com/files/live/sites/shared_bostik/files/post/2016/4/800x480_127.-Household-App-crop640x480.jpg') no-repeat center center;
+    url('https://plus.unsplash.com/premium_photo-1701534008693-0eee0632d47a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2Vic2l0ZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D') no-repeat center center;
   background-size: cover;
   height: 80vh;
   display: flex;
@@ -68,22 +66,21 @@ body {
 .login-btn,
 .register-btn,
 .shop-now-btn {
-  background-color: #ff6600; /* Orange color */
+  background-color: #ff6600; 
 }
 
 .login-btn:hover,
 .register-btn:hover,
 .shop-now-btn:hover {
-  background-color: #e65c00; /* Darker shade of orange on hover */
+  background-color: #e65c00; 
 }
 
-/* Features Section */
 .features-section {
   display: flex;
   justify-content: space-around;
   padding: 60px 0;
   background-color: #002b44;
-  color: #ffffff; /* Set default text color for the features section */
+  color: #ffffff; 
 }
 
 .feature-card {
@@ -108,7 +105,7 @@ body {
 
 .feature-card h3,
 .feature-card p {
-  color: #ffffff; /* Set text color to white */
+  color: #ffffff; 
 }
 
 .feature-card h3 {
@@ -120,7 +117,6 @@ body {
   font-size: 1.1rem;
 }
 
-/* Footer Styles */
 .footer {
   background-color: #20232a;
   color: white;
@@ -162,4 +158,5 @@ body {
   text-align: center;
   font-size: 0.9rem;
   margin-top: 20px;
-}
+} 
+
