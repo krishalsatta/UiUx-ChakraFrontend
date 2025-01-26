@@ -1,232 +1,120 @@
-/* body {
-  background-color: #e9f5ff;
-}
 
-.navbar {
-  background-color: #5c6267 !important;
-}
-
-.navbar .navbar-brand {
-  color: #fff;
-}
-
-.navbar .navbar-nav .nav-link {
-  color: #fff;
-}
-
-.card {
-  margin-top: 20px;
-}
-
-.table th, .table td {
-  vertical-align: middle;
-}
-
-.btn-primary {
-  background-color: #5c6267;
-  border-color: #5c6267;
-}
-
-.btn-primary:hover {
-  background-color: #5c6267;
-  border-color: #5c6267;
-}
-
-h3 {
-  color: black !important;
-}
-
-.modal-title {
-  color: black !important;
-}
-
-.modal-body .form-label {
-  color: black !important;
-}
-
-.modal-body input, .modal-body select, .modal-body textarea {
-  color: black !important;
-  background-color: white !important;
-}
-
-.modal-body input::placeholder, .modal-body textarea::placeholder {
-  color: #6c757d !important; 
-}
-
-.modal-content {
-  color: black !important;
-}
-
-.table-dark th {
-  color: white;
-  background-color: #5c6267;
-}
-
-.table-dark td {
-  color: black;
-  background-color: #f8f9fa;
-}
-
-.card-header {
-  color: white !important;
-}
-
-.card-body {
-  color: black !important;
-}
-
-.card-title {
-  color: black !important;
-}
-
-.table-hover tbody tr:hover {
-  background-color: #f1f1f1;
-}
-
-.text-end button {
-  color: white;
-  background-color: #0056b3;
-  border-color: #0056b3;
-}
-
-.text-end button:hover {
-  background-color: #004494;
-  border-color: #004494;
-}
-
-.btn-close {
-  filter: invert(1);
-}
-
-.modal-body label {
-  color: black !important;
-}
-
-.modal-body .form-control {
-  color: black !important;
-  background-color: white !important;
-}
-
-.modal-body input[type="file"] {
-  color: black !important;
-  background-color: white !important;
-} */
 
 body {
-  background-color: #f2f2f2; /* Light grey for body background */
+  background-color: #f2f2f2; 
 }
 
 .navbar {
-  background-color: #4a5568 !important; /* Muted dark grey for navbar */
+  background-color: #4a5568 !important; 
 }
 
 .navbar .navbar-brand {
-  color: #e2e8f0; /* Light grey for brand text */
+  color: #e2e8f0;
 }
 
 .navbar .navbar-nav .nav-link {
-  color: #e2e8f0; /* Light grey for navbar links */
+  color: #e2e8f0; 
 }
 
 .card {
   margin-top: 20px;
-  background-color: #edf2f7; /* Soft grey background for cards */
+  background-color: #edf2f7; 
   border: none;
 }
 
 .table th, .table td {
   vertical-align: middle;
-  color: #2d3748; /* Dark grey for table text */
+  color: #2d3748; 
 }
 
 .btn-primary {
-  background-color: #2b6cb0; /* Muted blue for primary buttons */
+  background-color: #2b6cb0; 
   border-color: #2b6cb0;
 }
 
 .btn-primary:hover {
-  background-color: #2c5282; /* Slightly darker blue on hover */
+  background-color: #2c5282; 
   border-color: #2c5282;
 }
 
 h3 {
-  color: #234674 !important; /* Dark grey for headings */
+  color: #234674 !important; 
 }
 
 .modal-title {
-  color: #2d3748 !important; /* Dark grey for modal titles */
+  color: #2d3748 !important; 
 }
 
 .modal-body .form-label {
-  color: #2d3748 !important; /* Dark grey for form labels */
+  color: #2d3748 !important; 
 }
 
 .modal-body input, .modal-body select, .modal-body textarea {
-  color: #2d3748 !important; /* Dark grey for inputs and selects */
-  background-color: #ffffff !important; /* White background for inputs */
+  color: #2d3748 !important; 
+  background-color: #ffffff !important; 
 }
 
 .modal-body input::placeholder, .modal-body textarea::placeholder {
-  color: #a0aec0 !important; /* Soft grey for placeholder text */
+  color: #a0aec0 !important; 
 }
 
 .modal-content {
-  background-color: #f7fafc; /* Very light grey for modal content */
-  color: #2d3748 !important; /* Dark grey for text */
+  background-color: #f7fafc; 
+  color: #2d3748 !important; 
 }
 
 .table-dark th {
-  color: #ffffff; /* White for table headers */
-  background-color: #2b6cb0; /* Muted blue for table headers */
+  color: #ffffff; 
+  background-color: #2b6cb0; 
 }
 
 .table-dark td {
-  color: #2d3748; /* Dark grey for table data */
-  background-color: #edf2f7; /* Soft grey for table rows */
+  color: #2d3748; 
+  background-color: #edf2f7; 
 }
 
 .card-header {
-  color: #ffffff !important; /* White for card headers */
-  background-color: #2b6cb0; /* Muted blue for card headers */
+  color: #ffffff !important;
+  background-color: #2b6cb0; 
 }
 
 .card-body {
-  color: #2d3748 !important; /* Dark grey for card text */
+  color: #2d3748 !important; 
 }
 
 .card-title {
-  color: #2d3748 !important; /* Dark grey for card titles */
+  color: #2d3748 !important; 
 }
 
 .table-hover tbody tr:hover {
-  background-color: #e2e8f0; /* Light grey hover effect */
+  background-color: #e2e8f0; 
 }
 
 .text-end button {
-  color: #ffffff; /* White for text */
-  background-color: #3182ce; /* Muted blue for buttons */
+  color: #ffffff; 
+  background-color: #3182ce; 
   border-color: #3182ce;
 }
 
 .text-end button:hover {
-  background-color: #2c5282; /* Slightly darker blue on hover */
+  background-color: #2c5282; 
   border-color: #2c5282;
 }
 
 .btn-close {
-  filter: invert(1); /* White for close button icon */
+  filter: invert(1); 
 }
 
 .modal-body label {
-  color: #2d3748 !important; /* Dark grey for modal labels */
+  color: #2d3748 !important; 
 }
 
 .modal-body .form-control {
-  color: #2d3748 !important; /* Dark grey for inputs */
-  background-color: #ffffff !important; /* White background for inputs */
+  color: #2d3748 !important;
+  background-color: #ffffff !important;
 }
 
 .modal-body input[type="file"] {
-  color: #2d3748 !important; /* Dark grey for file input */
-  background-color: #ffffff !important; /* White background for file input */
+  color: #2d3748 !important;
+  background-color: #ffffff !important; 
 }
