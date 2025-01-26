@@ -328,6 +328,7 @@ const ProductCard = ({ productInformation, viewMode, color }) => {
           )}
         </div>
       </StyledModal>
+      
     </>
   );
 };
