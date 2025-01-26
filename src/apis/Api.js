@@ -61,7 +61,7 @@ export const deleteProduct = (id) => Api.delete(`/api/product/delete_product/${i
 export const updateProduct = (id, data) => Api.put(`/api/product/update_product/${id}`, data, getConfig());
 
 // Forgot password API
-export const forgotPasswordApi = (data) => Api.post('/api/user/forgot_password', data);
+export const ForgetPasswordApi = (data) => Api.post('/api/user/forgot_password', data);
 
 // Verify OTP API
 export const verifyOtpApi = (data) => Api.post('/api/user/verify_otp', data);
