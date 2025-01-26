@@ -107,7 +107,7 @@
 
 //   return (
 //     <>
-      
+
 //       <div className="container-fluid p-4" style={{ backgroundColor: '#e9f5ff' }}>
 //         <div className="row mb-4">
 //           <div className="col">
@@ -344,14 +344,21 @@
 // };
 
 // export default AdminDashboard;
-import React, { useState, useEffect } from 'react';
-import { createProductApi, deleteProduct, getAllProducts, getOrdersApi, updateOrderStatusApi } from '../../apis/Api';
-import { toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
 
-import './AdminDashboard.css';
-import { Line } from 'react-chartjs-2';
-import 'chart.js/auto';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import {
+  createProductApi,
+  deleteProduct,
+  getAllProducts,
+  getOrdersApi,
+  updateOrderStatusApi,
+} from "../../apis/Api";
+
+import "chart.js/auto";
+import { Line } from "react-chartjs-2";
+import "./AdminDashboard.css";
 
 const AdminDashboard = () => {
   const [products, setProducts] = useState([]);
@@ -377,12 +384,12 @@ const AdminDashboard = () => {
       });
   }, []);
 
-  const [productName, setProductName] = useState('');
-  const [productPrice, setProductPrice] = useState('');
-  const [productCategory, setProductCategory] = useState('');
-  const [productDescription, setProductDescription] = useState('');
-  const [productImage, setProductImage] = useState('');
-  const [previewImage, setPreviewImage] = useState('');
+  const [productName, setProductName] = useState("");
+  const [productPrice, setProductPrice] = useState("");
+  const [productCategory, setProductCategory] = useState("");
+  const [productDescription, setProductDescription] = useState("");
+  const [productImage, setProductImage] = useState("");
+  const [previewImage, setPreviewImage] = useState("");
 
   const handleImage = (event) => {
     const file = event.target.files[0];
@@ -391,22 +398,22 @@ const AdminDashboard = () => {
   };
 
   const resetForm = () => {
-    setProductName('');
-    setProductPrice('');
-    setProductCategory('');
-    setProductDescription('');
-    setProductImage('');
-    setPreviewImage('');
+    setProductName("");
+    setProductPrice("");
+    setProductCategory("");
+    setProductDescription("");
+    setProductImage("");
+    setPreviewImage("");
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('productName', productName);
-    formData.append('productPrice', productPrice);
-    formData.append('productCategory', productCategory);
-    formData.append('productDescription', productDescription);
-    formData.append('productImage', productImage);
+    formData.append("productName", productName);
+    formData.append("productPrice", productPrice);
+    formData.append("productCategory", productCategory);
+    formData.append("productDescription", productDescription);
+    formData.append("productImage", productImage);
 
     createProductApi(formData)
       .then((res) => {
@@ -451,7 +458,9 @@ const AdminDashboard = () => {
 
   const handleUpdateOrderStatus = async (orderId, newStatus) => {
     try {
-      const response = await updateOrderStatusApi(orderId, { status: newStatus });
+      const response = await updateOrderStatusApi(orderId, {
+        status: newStatus,
+      });
       if (response.status === 200) {
         toast.success("Order status updated successfully");
         const updatedOrders = await getOrdersApi();
@@ -463,61 +472,28 @@ const AdminDashboard = () => {
   };
 
   const data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+    labels: ["January", "February", "March", "April", "May", "June"],
     datasets: [
       {
-        label: 'Sales',
+        label: "Sales",
         data: [65, 59, 80, 81, 56, 55],
         fill: false,
-        backgroundColor: 'rgb(75, 192, 192)',
-        borderColor: 'rgba(75, 192, 192, 0.2)',
+        backgroundColor: "rgb(75, 192, 192)",
+        borderColor: "rgba(75, 192, 192, 0.2)",
       },
     ],
   };
 
   return (
     <>
-    <div className="col">
-            <h3 className="text-2xl font-bold">Admin Dashboard</h3>
-          </div>
-          <div className="col">
-            <h3 className="text-2xl font-bold">Admin Dashboard</h3>
-          </div>
-        <div className="row mb-4">
-          <div className="col-md-3">
-            <div className="card text-white bg-primary mb-3">
-              <div className="card-header">Total Products</div>
-              <div className="card-body">
-                <h5 className="card-title">{products.length}</h5>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-3">
-            <div className="card text-white bg-success mb-3">
-              <div className="card-header">Sales</div>
-              <div className="card-body">
-                <h5 className="card-title">$12345</h5>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-3">
-            <div className="card text-white bg-warning mb-3">
-              <div className="card-header">Pending Orders</div>
-              <div className="card-body">
-                <h5 className="card-title">5</h5>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-3">
-            <div className="card text-white bg-danger mb-3">
-              <div className="card-header">Low Stock</div>
-              <div className="card-body">
-                <h5 className="card-title">2</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="container-fluid p-4" style={{ backgroundColor: '#e9f5ff' }}>
+      <div className="col">
+        <h3 className="text-2xl font-bold">Admin Dashboard</h3>
+      </div>
+
+      <div
+        className="container-fluid p-4"
+        style={{ backgroundColor: "#FFFFFFFF" }}
+      >
         <div className="row mb-4">
           <div className="col">
             <h3 className="text-2xl font-bold">Admin Dashboard</h3>
@@ -589,7 +565,7 @@ const AdminDashboard = () => {
             </div>
           </div>
         </div>
-
+{/* 
         <div className="row mb-4">
           <div className="col-md-12">
             <div className="card shadow-sm mb-4">
@@ -601,7 +577,7 @@ const AdminDashboard = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="row mb-4">
           <div className="col-md-12">
@@ -705,7 +681,9 @@ const AdminDashboard = () => {
                       <option value="Small Appliances">Small Appliances</option>
                       <option value="Big Appliances">Big Appliances</option>
                       <option value="Solar">Solar</option>
-                      <option value="Kitchen Appliances">Kitchen Appliances</option>
+                      <option value="Kitchen Appliances">
+                        Kitchen Appliances
+                      </option>
                       <option value="Air conditioner">Air Conditioner</option>
                     </select>
                   </div>
@@ -735,7 +713,7 @@ const AdminDashboard = () => {
                       <img
                         src={previewImage}
                         alt="Preview"
-                        style={{ maxWidth: '200px' }}
+                        style={{ maxWidth: "200px" }}
                       />
                     </div>
                   )}
@@ -761,7 +739,7 @@ const AdminDashboard = () => {
         {orderModalVisible && selectedOrder && (
           <div
             className="modal fade show"
-            style={{ display: 'block', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+            style={{ display: "block", backgroundColor: "rgba(0, 0, 0, 0.5)" }}
             tabIndex="-1"
             aria-labelledby="orderModalLabel"
             aria-hidden="true"
@@ -769,7 +747,9 @@ const AdminDashboard = () => {
             <div className="modal-dialog">
               <div className="modal-content">
                 <div className="modal-header">
-                  <h5 className="modal-title" id="orderModalLabel">Update Order Status</h5>
+                  <h5 className="modal-title" id="orderModalLabel">
+                    Update Order Status
+                  </h5>
                   <button
                     type="button"
                     className="btn-close"
@@ -785,7 +765,12 @@ const AdminDashboard = () => {
                     <label className="form-label">Update Status</label>
                     <select
                       className="form-control"
-                      onChange={(e) => handleUpdateOrderStatus(selectedOrder._id, e.target.value)}
+                      onChange={(e) =>
+                        handleUpdateOrderStatus(
+                          selectedOrder._id,
+                          e.target.value
+                        )
+                      }
                     >
                       <option value="Pending">Pending</option>
                       <option value="Processed">Processed</option>

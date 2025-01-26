@@ -1,9 +1,9 @@
-body {
+/* body {
   background-color: #e9f5ff;
 }
 
 .navbar {
-  background-color: #0056b3 !important;
+  background-color: #5c6267 !important;
 }
 
 .navbar .navbar-brand {
@@ -23,16 +23,15 @@ body {
 }
 
 .btn-primary {
-  background-color: #0056b3;
-  border-color: #0056b3;
+  background-color: #5c6267;
+  border-color: #5c6267;
 }
 
 .btn-primary:hover {
-  background-color: #004494;
-  border-color: #004494;
+  background-color: #5c6267;
+  border-color: #5c6267;
 }
 
-/* New CSS rules to change text color to black */
 h3 {
   color: black !important;
 }
@@ -51,7 +50,7 @@ h3 {
 }
 
 .modal-body input::placeholder, .modal-body textarea::placeholder {
-  color: #6c757d !important; /* Placeholder color */
+  color: #6c757d !important; 
 }
 
 .modal-content {
@@ -60,7 +59,7 @@ h3 {
 
 .table-dark th {
   color: white;
-  background-color: #343a40;
+  background-color: #5c6267;
 }
 
 .table-dark td {
@@ -99,7 +98,6 @@ h3 {
   filter: invert(1);
 }
 
-/* Ensuring all modal labels and inputs have black text */
 .modal-body label {
   color: black !important;
 }
@@ -112,4 +110,123 @@ h3 {
 .modal-body input[type="file"] {
   color: black !important;
   background-color: white !important;
+} */
+
+body {
+  background-color: #f2f2f2; /* Light grey for body background */
+}
+
+.navbar {
+  background-color: #4a5568 !important; /* Muted dark grey for navbar */
+}
+
+.navbar .navbar-brand {
+  color: #e2e8f0; /* Light grey for brand text */
+}
+
+.navbar .navbar-nav .nav-link {
+  color: #e2e8f0; /* Light grey for navbar links */
+}
+
+.card {
+  margin-top: 20px;
+  background-color: #edf2f7; /* Soft grey background for cards */
+  border: none;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+  color: #2d3748; /* Dark grey for table text */
+}
+
+.btn-primary {
+  background-color: #2b6cb0; /* Muted blue for primary buttons */
+  border-color: #2b6cb0;
+}
+
+.btn-primary:hover {
+  background-color: #2c5282; /* Slightly darker blue on hover */
+  border-color: #2c5282;
+}
+
+h3 {
+  color: #234674 !important; /* Dark grey for headings */
+}
+
+.modal-title {
+  color: #2d3748 !important; /* Dark grey for modal titles */
+}
+
+.modal-body .form-label {
+  color: #2d3748 !important; /* Dark grey for form labels */
+}
+
+.modal-body input, .modal-body select, .modal-body textarea {
+  color: #2d3748 !important; /* Dark grey for inputs and selects */
+  background-color: #ffffff !important; /* White background for inputs */
+}
+
+.modal-body input::placeholder, .modal-body textarea::placeholder {
+  color: #a0aec0 !important; /* Soft grey for placeholder text */
+}
+
+.modal-content {
+  background-color: #f7fafc; /* Very light grey for modal content */
+  color: #2d3748 !important; /* Dark grey for text */
+}
+
+.table-dark th {
+  color: #ffffff; /* White for table headers */
+  background-color: #2b6cb0; /* Muted blue for table headers */
+}
+
+.table-dark td {
+  color: #2d3748; /* Dark grey for table data */
+  background-color: #edf2f7; /* Soft grey for table rows */
+}
+
+.card-header {
+  color: #ffffff !important; /* White for card headers */
+  background-color: #2b6cb0; /* Muted blue for card headers */
+}
+
+.card-body {
+  color: #2d3748 !important; /* Dark grey for card text */
+}
+
+.card-title {
+  color: #2d3748 !important; /* Dark grey for card titles */
+}
+
+.table-hover tbody tr:hover {
+  background-color: #e2e8f0; /* Light grey hover effect */
+}
+
+.text-end button {
+  color: #ffffff; /* White for text */
+  background-color: #3182ce; /* Muted blue for buttons */
+  border-color: #3182ce;
+}
+
+.text-end button:hover {
+  background-color: #2c5282; /* Slightly darker blue on hover */
+  border-color: #2c5282;
+}
+
+.btn-close {
+  filter: invert(1); /* White for close button icon */
+}
+
+.modal-body label {
+  color: #2d3748 !important; /* Dark grey for modal labels */
+}
+
+.modal-body .form-control {
+  color: #2d3748 !important; /* Dark grey for inputs */
+  background-color: #ffffff !important; /* White background for inputs */
+}
+
+.modal-body input[type="file"] {
+  color: #2d3748 !important; /* Dark grey for file input */
+  background-color: #ffffff !important; /* White background for file input */
 }
