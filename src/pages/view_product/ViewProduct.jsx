@@ -1,18 +1,22 @@
-
-import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { getSingleProduct, addToCartApi, getReviewsApi, addReviewApi, getUserProfileApi } from '../../apis/Api';
-import Footer from '../../components/Footer';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; // Import the CSS for react-toastify
-import { Button, Image } from 'antd';
-import Rating from 'react-rating-stars-component';
-import styled from 'styled-components';
-import './ViewProduct.css';
+import { Button, Image } from "antd";
+import React, { useEffect, useState } from "react";
+import Rating from "react-rating-stars-component";
+import { useNavigate, useParams } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import the CSS for react-toastify
+import styled from "styled-components";
+import {
+  addReviewApi,
+  addToCartApi,
+  getReviewsApi,
+  getSingleProduct,
+  getUserProfileApi,
+} from "../../apis/Api";
+import "./ViewProduct.css";
 
 const PriceTag = styled.p`
   font-weight: bold;
-  color: #1890ff;
+  color: #0c4d8aff;
 `;
 
 const ViewProduct = () => {
@@ -21,13 +25,13 @@ const ViewProduct = () => {
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [reviews, setReviews] = useState([]);
-  const [newReview, setNewReview] = useState('');
+  const [newReview, setNewReview] = useState("");
   const [rating, setRating] = useState(1);
   const [averageRating, setAverageRating] = useState(0);
   const [user, setUser] = useState({
-    fullName: '',
-    phoneNumber: '',
-    address: ''
+    fullName: "",
+    phoneNumber: "",
+    address: "",
   });
 
   useEffect(() => {
@@ -68,7 +72,7 @@ const ViewProduct = () => {
         setUser({
           ...user,
           fullName: `${res.data.firstName} ${res.data.lastName}`,
-          phoneNumber: res.data.phone
+          phoneNumber: res.data.phone,
         });
       })
       .catch((error) => {
@@ -82,7 +86,7 @@ const ViewProduct = () => {
       await addToCartApi({
         productId: product._id,
         quantity: quantity,
-        total: total
+        total: total,
       });
       toast.success("Added to cart successfully!");
     } catch (error) {
@@ -95,9 +99,9 @@ const ViewProduct = () => {
     try {
       // Ensure item is added to cart before navigating
       await handleAddToCart();
-      navigate('/my_cart');
+      navigate("/my_cart");
     } catch (error) {
-      console.error('Error proceeding to payment:', error);
+      console.error("Error proceeding to payment:", error);
     }
   };
 
@@ -123,7 +127,11 @@ const ViewProduct = () => {
     }
 
     try {
-      const res = await addReviewApi({ productId: id, rating, comment: newReview });
+      const res = await addReviewApi({
+        productId: id,
+        rating,
+        comment: newReview,
+      });
       toast.success(res.data.message);
       setRating(1); // Reset rating
       setNewReview(""); // Reset comment
@@ -143,7 +151,12 @@ const ViewProduct = () => {
 
   return (
     <div className="background">
-      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} closeOnClick />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+      />
       <div className="container mt-5">
         <div className="row">
           <div className="col-md-6">
@@ -159,18 +172,41 @@ const ViewProduct = () => {
               <h2>{product.productName}</h2>
               <PriceTag>Rs {product.productPrice}</PriceTag>
               <h5>Category: {product.productCategory}</h5>
-              <p><strong>Description: </strong>{product.productDescription}</p>
-              <p><strong>Date Added: </strong>{new Date(product.createdAt).toLocaleDateString()}</p>
-              <p><strong>Status: </strong>Available</p>
-              <p><strong>Views: </strong>{product.views}</p>
+              <p>
+                <strong>Description: </strong>
+                {product.productDescription}
+              </p>
+              <p>
+                <strong>Date Added: </strong>
+                {new Date(product.createdAt).toLocaleDateString()}
+              </p>
+              <p>
+                <strong>Status: </strong>Available
+              </p>
+              <p>
+                <strong>Views: </strong>
+                {product.views}
+              </p>
               <div className="mt-3">
                 <div className="quantity-selector">
-                  <Button onClick={decreaseQuantity} type="primary">-</Button>
+                  <Button onClick={decreaseQuantity} type="primary">
+                    -
+                  </Button>
                   <span>{quantity}</span>
-                  <Button onClick={increaseQuantity} type="primary">+</Button>
+                  <Button onClick={increaseQuantity} type="primary">
+                    +
+                  </Button>
                 </div>
-                <Button onClick={handleAddToCart} type="primary" className="me-2">Add to Cart</Button>
-                <Button onClick={handleProceedToPayment} type="primary">Buy Now</Button>
+                <Button
+                  onClick={handleAddToCart}
+                  type="primary"
+                  className="me-2"
+                >
+                  Add to Cart
+                </Button>
+                <Button onClick={handleProceedToPayment} type="primary">
+                  Buy Now
+                </Button>
               </div>
             </div>
           </div>
@@ -188,13 +224,20 @@ const ViewProduct = () => {
               />
               <div className="rating-input">
                 <label>Rating:</label>
-                <select value={rating} onChange={(e) => setRating(parseInt(e.target.value, 10))}>
-                  {[1, 2, 3, 4, 5].map(num => (
-                    <option key={num} value={num}>{num} ★</option>
+                <select
+                  value={rating}
+                  onChange={(e) => setRating(parseInt(e.target.value, 10))}
+                >
+                  {[1, 2, 3, 4, 5].map((num) => (
+                    <option key={num} value={num}>
+                      {num} ★
+                    </option>
                   ))}
                 </select>
               </div>
-              <Button className="btn btn-primary mt-2" onClick={submitReview}>Submit Review</Button>
+              <Button className="btn btn-primary mt-2" onClick={submitReview}>
+                Submit Review
+              </Button>
             </div>
           </div>
         </div>
@@ -214,8 +257,14 @@ const ViewProduct = () => {
                 ) : (
                   reviews.map((rev, index) => (
                     <div key={index} className="review-item">
-                      <p><strong>{rev.userId.firstName} {rev.userId.lastName}</strong></p>
-                      <p><strong>Rating:</strong> {rev.rating} ★</p>
+                      <p>
+                        <strong>
+                          {rev.userId.firstName} {rev.userId.lastName}
+                        </strong>
+                      </p>
+                      <p>
+                        <strong>Rating:</strong> {rev.rating} ★
+                      </p>
                       <p>{rev.comment}</p>
                     </div>
                   ))
@@ -224,18 +273,9 @@ const ViewProduct = () => {
             </div>
           </div>
         </div>
-        <div className="row mt-4">
-          <div className="col-md-12">
-            <div className="card p-3 additional-info">
-              <h4>Additional Information</h4>
-              <p><strong>Warranty: </strong>1 year</p>
-              <p><strong>Delivery Options: </strong>Home Delivery, Store Pickup</p>
-              <p><strong>Return Policy: </strong>30-day return policy</p>
-            </div>
-          </div>
-        </div>
+
       </div>
-      <Footer />
+      ={" "}
     </div>
   );
 };
